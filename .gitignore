@@ -1,0 +1,268 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Generated dataset outputs  (project-specific — keep these)
+# ─────────────────────────────────────────────────────────────────────────────
+# The dataset creation scripts rebuild these from the raw files on demand, and
+# they are far too large for git (experiment 11 alone is a 1.6 GB pickle and a
+# 2.9 GB CSV; all seven together are ~8.5 GB). GitHub rejects any single file
+# over 100 MB. The scripts are the deliverable here — the outputs are not.
+*.pkl
+*.pkl.gz
+*.csv
+*.npz
+
+# Exception: the measured (experimental) datasets are checked in via Git LFS
+# under /dataset — experiments 2, 3, 4, 5, 11, 12, 13, 14, the raw BCTDS
+# measurements. Simulated experiments (6, 7, 8, 9, 10, 15, 16) are not checked
+# in; they regenerate deterministically from their creation scripts.
+# Pickle only — the CSVs are equivalent data in a heavier format, so they stay
+# gitignored (still generated locally, just not pushed).
+!/dataset/experiment_2/*.pkl
+!/dataset/experiment_3/*.pkl
+!/dataset/experiment_4/*.pkl
+!/dataset/experiment_5/*.pkl
+!/dataset/experiment_11/*.pkl
+!/dataset/experiment_12/*.pkl
+!/dataset/experiment_13/*.pkl
+!/dataset/experiment_14/*.pkl
+
+# Raw measurement files. These live in the manuscript codebase, not here; this
+# repo holds only the code that reads them.
+*.npy
+
+# NOTE: metadata.json and column_info.json are deliberately NOT ignored. They
+# are small, they are the human- and machine-readable data dictionary, and they
+# are regenerated on every run so they cannot drift from the code.
+
+# Per-run reverification logs written by the dataset scripts (e.g. experiment_8
+# writes experiment_8/experiment_8_run.log; a manual `> run_full.log` redirect
+# produces run_full.log). These are build artifacts, not source. Also matched by
+# the generic *.log rule further down; listed here so the intent is explicit.
+*_run.log
+run_full.log
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[codz]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# UV
+#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#uv.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#poetry.lock
+#poetry.toml
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
+#   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
+#pdm.lock
+#pdm.toml
+.pdm-python
+.pdm-build/
+
+# pixi
+#   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
+#pixi.lock
+#   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
+#   in the .venv directory. It is recommended not to include this directory in version control.
+.pixi
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.envrc
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#.idea/
+
+# Abstra
+# Abstra is an AI-powered process automation framework.
+# Ignore directories containing user credentials, local state, and settings.
+# Learn more at https://abstra.io/docs
+.abstra/
+
+# Visual Studio Code
+#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore
+#  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
+#  and can be added to the global gitignore or merged into this file. However, if you prefer,
+#  you could uncomment the following to ignore the entire vscode folder
+# .vscode/
+
+# Ruff stuff:
+.ruff_cache/
+
+# PyPI configuration file
+.pypirc
+
+# Cursor
+#  Cursor is an AI-powered code editor. `.cursorignore` specifies files/directories to
+#  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
+#  refer to https://docs.cursor.com/context/ignore-files
+.cursorignore
+.cursorindexingignore
+
+# Marimo
+marimo/_static/
+marimo/_lsp/
+__marimo__/
+
+# Envs
+.venv
+venv
+.bctds
+env_*
+
+# Code Result Folders
+outputs/
+archive/
+plots/
+runs/
+data/
+
+# Built website. Regenerated from the experiment READMEs by website/build_site.py
+# (and by the GitHub Actions Pages workflow on every deploy), so the built file is
+# never committed — this keeps the live site always in sync with the current
+# READMEs. Rebuild locally with `python website/build_site.py` to preview.
+website/index.html

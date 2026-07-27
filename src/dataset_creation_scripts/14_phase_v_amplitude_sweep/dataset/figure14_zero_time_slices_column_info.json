@@ -1,0 +1,82 @@
+[
+  {
+    "column_name": "sample_id",
+    "data_type": "string",
+    "can_have_nulls": false,
+    "maps_to_original": "filename prefix",
+    "value_or_range": "1950",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Sample or measurement identifier parsed from filename."
+  },
+  {
+    "column_name": "requested_pulse_amp_au",
+    "data_type": "int32",
+    "can_have_nulls": false,
+    "maps_to_original": "pulse_amp_plot_list",
+    "value_or_range": "0 to 30000 a.u.",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Requested amplitude used in the amplitude sweep."
+  },
+  {
+    "column_name": "available_pulse_amp_au",
+    "data_type": "int32",
+    "can_have_nulls": false,
+    "maps_to_original": "1950_amp_<available_amp>_IQ_avg_matrix_0.npy",
+    "value_or_range": "0 to 30000 a.u.",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Actual raw amplitude file loaded."
+  },
+  {
+    "column_name": "frequency_MHz",
+    "data_type": "int32",
+    "can_have_nulls": false,
+    "maps_to_original": "frequency row index",
+    "value_or_range": "4100 to 4599 MHz",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Drive frequency associated with each matrix row."
+  },
+  {
+    "column_name": "frequency_GHz",
+    "data_type": "float32",
+    "can_have_nulls": false,
+    "maps_to_original": "frequency_MHz / 1000",
+    "value_or_range": "4.100 to 4.599 GHz",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Drive frequency converted to GHz."
+  },
+  {
+    "column_name": "zero_time_log10_amplitude",
+    "data_type": "float32",
+    "can_have_nulls": false,
+    "maps_to_original": "log10_amplitude_tp[:, 0]",
+    "value_or_range": "typically around -2 to 3",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "First transient-processing time sample."
+  },
+  {
+    "column_name": "zero_fft_frequency_MHz",
+    "data_type": "float32",
+    "can_have_nulls": false,
+    "maps_to_original": "FFT frequency axis index 0",
+    "value_or_range": "0 MHz",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Zero-frequency FFT slice."
+  },
+  {
+    "column_name": "zero_freq_phase_fft",
+    "data_type": "float32",
+    "can_have_nulls": false,
+    "maps_to_original": "abs(fft(phase_tp))[0]",
+    "value_or_range": ">= 0",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Phase FFT magnitude at 0 MHz."
+  }
+]

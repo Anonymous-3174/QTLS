@@ -1,0 +1,92 @@
+[
+  {
+    "column_name": "sample_id",
+    "data_type": "string",
+    "can_have_nulls": false,
+    "maps_to_original": "filename prefix",
+    "value_or_range": "1950",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Sample or measurement identifier parsed from filename."
+  },
+  {
+    "column_name": "requested_pulse_amp_au",
+    "data_type": "int32",
+    "can_have_nulls": false,
+    "maps_to_original": "pulse_amp_plot_list",
+    "value_or_range": "0 to 30000 a.u.",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Requested amplitude used in the amplitude sweep."
+  },
+  {
+    "column_name": "available_pulse_amp_au",
+    "data_type": "int32",
+    "can_have_nulls": false,
+    "maps_to_original": "1950_amp_<available_amp>_IQ_avg_matrix_0.npy",
+    "value_or_range": "0 to 30000 a.u.",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Actual raw amplitude file loaded."
+  },
+  {
+    "column_name": "frequency_MHz",
+    "data_type": "int32",
+    "can_have_nulls": false,
+    "maps_to_original": "frequency row index",
+    "value_or_range": "4100 to 4599 MHz",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Drive frequency associated with each matrix row."
+  },
+  {
+    "column_name": "frequency_GHz",
+    "data_type": "float32",
+    "can_have_nulls": false,
+    "maps_to_original": "frequency_MHz / 1000",
+    "value_or_range": "4.100 to 4.599 GHz",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Drive frequency converted to GHz."
+  },
+  {
+    "column_name": "raw_time_index",
+    "data_type": "int32",
+    "can_have_nulls": false,
+    "maps_to_original": "raw time-axis index",
+    "value_or_range": "0 to n_time - 1",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Original sample index before cropping."
+  },
+  {
+    "column_name": "timestamp_ns_raw",
+    "data_type": "float32",
+    "can_have_nulls": false,
+    "maps_to_original": "raw_time_index * 1000 / 552.96",
+    "value_or_range": ">= 0 ns",
+    "num_columns": 1,
+    "in_raw_npy": false,
+    "derivation_or_notes": "Raw timestamp from ADC sampling rate."
+  },
+  {
+    "column_name": "I",
+    "data_type": "float32",
+    "can_have_nulls": false,
+    "maps_to_original": "IQ_matrix[0]",
+    "value_or_range": "ADC dependent",
+    "num_columns": 1,
+    "in_raw_npy": true,
+    "derivation_or_notes": "In-phase homodyne channel. This is one of only two raw columns stored in the .npy file."
+  },
+  {
+    "column_name": "Q",
+    "data_type": "float32",
+    "can_have_nulls": false,
+    "maps_to_original": "IQ_matrix[1]",
+    "value_or_range": "ADC dependent",
+    "num_columns": 1,
+    "in_raw_npy": true,
+    "derivation_or_notes": "Quadrature homodyne channel. This is one of only two raw columns stored in the .npy file."
+  }
+]
