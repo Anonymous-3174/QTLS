@@ -309,7 +309,7 @@ TEMPLATE = r"""<!doctype html>
       <a href="#overview">Overview</a>
       <a href="#experiments">Experiments</a>
       <a href="#access">Access</a>
-      <a href="https://anonymous.4open.science/r/BCTDS-Coherent-Control-Manuscript-Codebase-C406/README.md" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://anonymous.4open.science/r/TLS-Data-Paper-6C68/README.md" target="_blank" rel="noopener">GitHub ↗</a>
       <a href="#experiments" class="nav-cta" style="color:var(--cyan)">Explore ↗</a>
     </div>
   </div>
