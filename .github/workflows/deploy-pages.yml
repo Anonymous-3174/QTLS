@@ -1,14 +1,10 @@
 name: Deploy QTLS website to GitHub Pages
 
-# Rebuilds the site from the experiment READMEs and publishes it to GitHub Pages
-# on every push to the default branch that touches the website or a README.
+# Rebuilds the site from the experiment READMEs and publishes it to GitHub Pages.
+# Manual trigger only on this repo (no push trigger) so that deploys are
+# attributed to whoever clicks "Run workflow" in the browser, not to whichever
+# git account performed a push.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "website/**"
-      - "src/dataset_creation_scripts/**/README.md"
-      - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:        # allow manual runs from the Actions tab
 
 # Permissions the Pages deployment needs
